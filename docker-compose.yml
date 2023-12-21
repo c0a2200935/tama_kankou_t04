@@ -1,0 +1,83 @@
+version: '3'
+services:
+  web:
+    container_name: pan_3web
+    build: 
+      context: ./web
+      dockerfile: Dockerfile
+    # image: httpd
+    ports:
+      - "8800:80"
+    volumes:
+      - ./web/htdocs:/usr/local/apache2/htdocs
+    restart: always
+    environment:
+      PROXY_PATH: /plot # /ここのURLにアクセスが来た場合、下のPROXY_URLへ飛ばす
+      PROXY_URL: app:8009/plot # 上からのアクセスを飛ばす先。/以降は上と合わせる。appサーバの/plotプロジェクトに飛ぶ
+      
+    networks:
+      # - webapp_net
+      - all_net
+    
+  app:
+    container_name: pan_3app
+    build: 
+      context: ./app
+      dockerfile: Dockerfile
+    # ports:
+    #   - "8888:8080"
+    volumes:
+      - ./app/deploy/:/usr/local/tomcat/webapps/  # upload内のwarファイルを設置する
+      # - ./app/logs/:/usr/local/tomcat/logs  # エラーログを収集したい場合は有効化する
+    # environment:
+    #   - CLASSPATH=/usr/local/tomcat/lib/mysql-connector-j-8.1.0.jar:/usr/local/tomcat/bin/bootstrap.jar:/usr/local/tomcat/bin/tomcat-juli.jar:/usr/local/tomcat/lib/servlet-api.jar
+    #   - JRE_HOME=/usr/local/openjdk-21
+    #   - CATALINA_TMPDIR=/usr/local/tomcat/temp
+    #   - CATALINA_BASE=/usr/local/tomcat
+    restart: always
+    networks:
+      # - webapp_net
+      # - appdata_net
+      - all_net
+
+  pan_3db:
+    container_name: pan_3db
+    build: 
+      context: ./database
+      dockerfile: Dockerfile
+    ports:
+      - "3305:3306"
+    restart: always
+    networks:
+      # - appdata_net
+      # - admin_net
+      - all_net
+    environment:
+      MYSQL_ROOT_PASSWORD: panpassword
+      MYSQL_DATABASE: pan_3db
+      MYSQL_USER: pan
+      MYSQL_PASSWORD: pan
+    volumes:
+      - db-store:/var/lib/mysql
+
+  dbadminer:
+    container_name: pan_3adminer
+    image: adminer
+    ports:
+      - "8889:8080"
+    restart: always
+    networks:
+      # - admin_net
+      - all_net
+    depends_on:
+      - pan_3db
+
+networks:
+  # webapp_net:
+  # appdata_net:
+  # admin_net:
+  all_net:
+
+volumes:
+  db-store:
+
