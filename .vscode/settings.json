@@ -1,0 +1,7 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "app/project/team04_kensaku/lib/servlet-api.jar",
+        "app/project/team04_kensaku/lib/jsp-api.jar"
+    ]
+}

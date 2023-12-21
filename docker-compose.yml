@@ -12,8 +12,8 @@ services:
       - ./web/htdocs:/usr/local/apache2/htdocs
     restart: always
     environment:
-      PROXY_PATH: /plot # /ここのURLにアクセスが来た場合、下のPROXY_URLへ飛ばす
-      PROXY_URL: app:8009/plot # 上からのアクセスを飛ばす先。/以降は上と合わせる。appサーバの/plotプロジェクトに飛ぶ
+      PROXY_PATH: /team04_kensaku # /ここのURLにアクセスが来た場合、下のPROXY_URLへ飛ばす
+      PROXY_URL: app:8009/team04_kensaku # 上からのアクセスを飛ばす先。/以降は上と合わせる。appサーバの/plotプロジェクトに飛ぶ
       
     networks:
       # - webapp_net
