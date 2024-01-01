@@ -11,9 +11,9 @@
     String selectedTag = request.getParameter("tag");
 
     // データベース接続情報
-    String url = "jdbc:mysql://localhost:3306/データベース名";
-    String user = "ユーザー名";
-    String password = "パスワード";
+    String url = "jdbc:mysql://localhost:3306/kankouti";
+    String user = "root";
+    String password = "password";
 
     // タグに該当する観光地を取得
     List<String[]> resultList = new ArrayList<>();
