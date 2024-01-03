@@ -8,10 +8,10 @@
 
 <%
     // データベース接続情報
-    String url = "jdbc:mysql://localhost:3306/データベース名";
-    String user = "ユーザー名";
-    String password = "パスワード";
-
+    String url = "jdbc:mysql://localhost:3306/kankouti";
+    String user = "root";  // ユーザー名（適切なものに変更してください）
+    String password = "password";
+    
     // タグの選択肢を取得
     Set<String> tags = new HashSet<>();
     try {

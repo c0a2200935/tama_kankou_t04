@@ -8,15 +8,15 @@
   version="4.0">
 
 
-  <!-- <application>
-    <display-name>MyApp</display-name>
-    <module>
-      <web>
-        <web-uri>default-war</web-uri>
-        <context-root>/plot</context-root>
-      </web>
-    </module>
-  </application> -->
+  <servlet>
+    <servlet-name>SearchServlet</servlet-name>
+    <servlet-class>kensaku.SearchServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>SearchServlet</servlet-name>
+    <url-pattern>/SearchServlet</url-pattern>
+  </servlet-mapping>
 
 </web-app>
 
