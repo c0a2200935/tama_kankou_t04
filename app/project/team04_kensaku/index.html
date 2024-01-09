@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- ここには追加のヘッド要素が入ります（CSSやJavaScriptのリンクなど） -->
+</head>
+
+<body>
+    <!-- ここには文書の本文が入ります -->
+
+    <header>
+        <!-- ヘッダー部分 -->
+        <h1>多摩地域観光検索アプリ</h1>
+        <p>気分やキーワードを入力して、あなたにあった多摩地域の観光地を検索します！</p>
+    </header>
+
+    <main>
+        <!-- メインコンテンツ -->
+        <section id="kensaku">
+            <!-- セクション1 -->
+            <h3>気分を選び、キーワードを入力してください</h3>
+            <form accept-charset="UTF-8" method="post" action="./tamakankou">
+            <p>気分を入力してください。</p>
+            <p><select name="kibun">
+                <option value="リフレッシュしたい">リフレッシュしたい</option>
+                <option value="祈りたい">祈りたい</option>
+                <option value="自然を楽しみたい">自然を楽しみたい</option>
+                <option value="アトラクションに乗りたい">アトラクションに乗りたい</option>
+                <option value="動物を見たい">動物を見たい</option>
+                <option value="本を読みたい">本を読みたい</option>
+                <option value="一日遊びたい">一日遊びたい</option>
+                </select></p>
+                <p>キーワードを入力してください。</p>
+                <input type="text" name="tagu">
+            <p><input type="submit" value="検索する"></p>
+            </form>
+
+        </section>
+
+        <!-- 他のセクションやコンテンツ -->
+    </main>
+
+    <footer>
+        <!-- フッター部分 -->
+        <p>&copy; 2023 Your Website Name</p>
+    </footer>
+
+    <!-- ここには追加のボディ要素が入ります（JavaScriptのスクリプトなど） -->
+
+</body>
+
+</html>
