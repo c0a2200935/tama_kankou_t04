@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>テストページ</title>
+    <title>検索結果</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -97,7 +97,7 @@
 
 </body>
 <footer>
-    &copy; 2024 Your Website Name
+    &copy; 2024 2024 TAMA_KANKOU_T04
 </footer>
 
 </html>
