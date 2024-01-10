@@ -51,6 +51,9 @@
             padding: 1em 0;
             background-color: #333;
             color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
@@ -97,7 +100,7 @@
 
 </body>
 <footer>
-    &copy; 2024 2024 TAMA_KANKOU_T04
+    &copy; 2024 TAMA_KANKOU_T04
 </footer>
 
 </html>
